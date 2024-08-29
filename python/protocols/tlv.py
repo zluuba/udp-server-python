@@ -45,7 +45,7 @@ def parse_binary_data(data: bytes) -> tuple[list, list]:
             data = data[TL_BYTES + length:]
 
         except (struct_error, UnicodeDecodeError, ValueError) as e:
-            error = f'Incorrect TLV scheme: {e}'
+            error = f'Incorrect TLV schema: {e}'
             errors.append(error)
             break
 

@@ -4,11 +4,11 @@ from commands.valid_commands.base import CommandBase
 class NetworkTagCmd(CommandBase):
     TAG: str = '0x1'
     NAME: str = 'метка сети'
+    MAX_BYTES: int = 255
 
     def validate(self):
-        return self.is_within_255_bytes(self.value)
+        return self.is_within_max_bytes()
 
-    @staticmethod
-    def is_within_255_bytes(string: str) -> bool:
-        byte_length = len(string.encode('utf-8'))
-        return byte_length <= 255
+    def is_within_max_bytes(self) -> bool:
+        byte_length = len(self.string.encode('utf-8'))
+        return byte_length <= self.MAX_BYTES
