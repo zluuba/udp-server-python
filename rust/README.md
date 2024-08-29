@@ -1,4 +1,4 @@
-# UDP Server for TLV Packets (Rust)
+# TLV UDP Server (Rust)
 
 - it works, but unreadable
 - about 50% complete

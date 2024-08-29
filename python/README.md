@@ -1,4 +1,4 @@
-# UDP Server for TLV Packets (Python)
+# TLV UDP Server (Python)
 
 - simple and readable
 - single-threaded, blocking I/O
