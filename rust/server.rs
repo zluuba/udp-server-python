@@ -26,7 +26,7 @@ pub fn run() -> std::io::Result<()> {
             }
 
             if !errors.is_empty() {
-                println!("UDP Packet has errors: {:?}", errors)
+                eprintln!("UDP Packet has errors: {:?}", errors)
             } else {
                 socket.send_to(&buf[..amt], &src)?;
             }
