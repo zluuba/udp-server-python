@@ -11,8 +11,8 @@ pub fn run() -> std::io::Result<()> {
         let mut buf = vec![0u8; config.mtu as usize];
 
         loop {
-            let (amt, src) = socket.recv_from(&mut buf)?;
-            let (tlv_packets, errors) = parse_tlv(&buf[..amt]);
+            let (data, src) = socket.recv_from(&mut buf)?;
+            let (tlv_packets, errors) = parse_tlv(&buf[..data]);
 
             for packet in tlv_packets {
                 let string_value = String::from_utf8(packet.value).unwrap();
@@ -28,7 +28,7 @@ pub fn run() -> std::io::Result<()> {
             if !errors.is_empty() {
                 eprintln!("UDP Packet has errors: {:?}", errors)
             } else {
-                socket.send_to(&buf[..amt], &src)?;
+                socket.send_to(&buf[..data], &src)?;
             }
         }
     }
