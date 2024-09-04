@@ -1,6 +1,0 @@
-# PyCharm, MacOS files
-.DS_Store
-.idea/
-
-# test files
-__pycache__

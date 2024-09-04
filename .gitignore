@@ -1,2 +1,10 @@
-# PyCharm files
+# PyCharm, MacOS files
+.DS_Store
 .idea/
+
+# test garbage files
+__pycache__/
+.coverage
+
+# local files
+feedback.md
