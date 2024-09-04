@@ -16,9 +16,11 @@ class CommandBase(ABC):
         self._is_valid = None
 
     @property
-    @abstractmethod
     def is_valid(self):
-        pass
+        if self._is_valid is None:
+            self._is_valid = self._validate()
+
+        return self._is_valid
 
     @abstractmethod
     def _validate(self):
