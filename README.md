@@ -63,7 +63,7 @@ echo -ne 'linuswouldbescreamingifhesawthis' | nc -u -w1 127.0.0.1 31337
   
 
 ### Additional
-Ypu can check project with tests, linter and typing checker.  
+You can check project with tests, linter and typing checker.  
 You need `pytest`, `flake8` and `mypy` to be installed 
 (better be installing them in [venv](https://docs.python.org/3/library/venv.html#creating-virtual-environments)):
 ```bash
